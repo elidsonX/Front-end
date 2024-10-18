@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --gray: #606060;
+    --red: #B40E0E;
+    --white:  #fff;
+}
+
+header{
+    margin: 25px 0px -20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    width: 220px;
+}
+
+main div img{
+    width: 300px;
+}
+
+.cardapio .um, .dois, .tres{
+    display: flex;
+    align-items: center;
+    margin: 70px;
+}
+
+.cardapio h1{
+    font-size: 45px;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    max-width: 100%;
+    margin: 0px 0px 0px 100px;
+    
+}
+
+.cardapio .paragrafo-1{
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gray);
+    margin: 100px -230px 0px;  
+}
+
+.cardapio .paragrafo-2{
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gray);
+    margin: 100px -280px 0px;  
+}
+
+.cardapio .paragrafo-3{
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gray);
+    margin: 100px -220px 0px;  
+}
+
+
+main .botao{
+    margin: 0px 70px 0px 70px;
+}
+
+main .botao a{
+    width: 100%;
+    height: 100px;
+    color: var(--white);
+    background-color: var(--red);
+    border: none;
+    border-radius: 20px;
+    font-size: 50px;
+    font-weight: 700;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 40px;
+    word-spacing: 230px;
+    text-decoration: none;
+}
+
+
+
+

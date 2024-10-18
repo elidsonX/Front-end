@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --gray: #606060;
+    --red: #B40E0E;
+    --white:  #fff;
+    --black: #000;
+    --yellow: #EFA216;
+    --gray-white: #ccc;
+}
+
+header{
+    margin: 25px 0px -20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    width: 220px;
+}
+
+.container h1{
+    color: var(--gray);
+    font-size: 45px;
+    display: flex;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.container h2{
+    color: var(--black);
+    font-family: "Rowdies", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 55px;
+    margin-left: 100px;
+}
+
+.container .condicao{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-right: 20px;
+}
+
+.container .condicao img{
+    width: 200px;
+}
+
+.container .condicao p{
+    color: var(--gray);
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 50px;
+    margin-right: 10px;
+}
+
+.container nav{
+    border: var(--white) solid 2px;
+    width: 600px;
+    background-color: var(--yellow);
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 100px;
+    border-radius: 20px;
+}
+
+.container nav h3{
+    font-family: "Rowdies", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--black);
+    font-size: 35px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.container nav p{
+    color: var(--white);
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: 50px;   
+}
+
+
+main .botao a{
+    width: 700px;
+    height: 100px;
+    color: var(--white);
+    background-color: var(--red);
+    border: none;
+    border-radius: 20px;
+    font-size: 60px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-spacing: 30px;
+    text-decoration: none;
+    margin-top: 350px;
+    margin-left: 70px;
+}

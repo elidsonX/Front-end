@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --gray: #606060;
+    --red: #B40E0E;
+    --white:  #fff;
+    --black: #000;
+    --yellow: #EFA216;
+    --gray-white: #ccc;
+}
+
+header{
+    margin: 25px 0px -20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    width: 220px;
+}
+
+main nav{
+    border: var(--white) solid 2px;
+    width: 600px;
+    background-color: var(--yellow);
+    height: 200px;
+    margin-top: 80px;
+    margin-left: 100px;
+    border-radius: 20px;
+}
+
+main nav h1{
+    font-family: "Rowdies", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--black);
+    font-size: 30px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+main nav p{
+    color: var(--white);
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: 50px; 
+}
+
+
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    margin-left: 550px;
+  }
+  
+  .custom-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  
+  .custom-checkbox:checked ~ .checkmark {
+    background-color: var(--red);
+    box-shadow: 0 3px 7px rgba(141, 8, 8, 0.3);
+  }
+  
+  .custom-checkbox:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  @keyframes checkAnim {
+    0% {
+      height: 0;
+    }
+  
+    100% {
+      height: 10px;
+    }
+  }
+  
+  .custom-checkbox:checked ~ .checkmark:after {
+    animation: checkAnim 0.2s forwards;
+  }
+
+div img{
+    width: 550px;
+    margin-top: 400px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+}
+
+a{
+    width: 700px;
+    height: 100px;
+    color: var(--white);
+    background-color: var(--red);
+    border: none;
+    border-radius: 20px;
+    font-size: 60px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-spacing: 30px;
+    text-decoration: none;
+    margin-top: 850px;
+    margin-left: 70px;
+}
