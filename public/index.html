@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thynk Burger - Faça seu Pedido</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #ff6600;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        header img {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .menu-item {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+        .menu-item button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .menu-item button:hover {
+            background-color: #e55b00;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .delete-btn:hover {
+            background-color: #cc0000;
+        }
+        #cart {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+        #cart-total {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        #checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        #checkout-btn:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body id="home">
+    <header>
+        <img src="./assets/Borcelle Burger (1) 1 3.svg" alt="Thynk Burger Logo">
+    </header>
+    <main>
+        <h2>Faça seu Pedido</h2>
+        <div class="menu-grid" id="menu">
+            <!-- Menu items will be dynamically added here -->
+        </div>
+        <div id="cart">
+            <h3>Seu Carrinho</h3>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: R$ 0.00</p>
+            <button id="checkout-btn">Finalizar Pedido</button>
+            <a href="./adicionarProdutos.html">Adicionar Novo Produto</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Thynk Burger. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        window.menuItems = [
+            { id: 1, name: 'Big Salada', price: 40.00, image: './assets/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon 1.svg' },
+            { id: 2, name: 'Batata Frita', price: 25.00, image: './assets/crispy-french-fries-with-ketchup-mayonnaise 1.svg' },
+            { id: 3, name: 'Coca-Cola', price: 5.00, image: './assets/qasim-malick-PZsso_IiYRE-unsplash 1.svg' },
+        ];
+        window.cart = [];
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

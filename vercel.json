@@ -1,0 +1,14 @@
+{
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "*.js", "use": "@vercel/static" },
+    {
+      "src": "config.js",
+      "use": "@vercel/static",
+      "config": { "injectConfig": true }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}

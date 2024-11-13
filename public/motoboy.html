@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thynk Burger - Motoboy</title>
+    <link rel="stylesheet" href="./pages.css">
+    <style>
+        body#motoboy {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        #motoboy .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        #motoboy h2 {
+            color: #ff6600;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 10px;
+        }
+        #motoboy ul#itensPedido {
+            list-style-type: none;
+            padding: 0;
+        }
+        #motoboy ul#itensPedido li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #motoboy button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #motoboy button:hover {
+            background-color: #e55b00;
+        }
+    </style>
+</head>
+<body id="motoboy">
+    <div class="container">
+        <h2>Pedido para Entrega</h2>
+        <p><strong>Nome:</strong> <span id="nomeCliente"></span></p>
+        <p><strong>Endereço:</strong> <span id="enderecoCliente"></span></p>
+        <h3>Itens do Pedido:</h3>
+        <ul id="itensPedido"></ul>
+        <p><strong>Total:</strong> <span id="totalPedido"></span></p>
+        <button onclick="window.location.href='entregue.html'">Marcar como Entregue</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

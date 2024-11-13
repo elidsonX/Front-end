@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto - Thynk Burger</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff6600;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input[type="file"] {
+            padding: 0.3rem;
+        }
+        #imagePreview {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+        button {
+            background-color: #ff6600;
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e55b00;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: #ff6600;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body id="adicionarProdutos">
+    <div class="container">
+        <h1>Adicionar Novo Produto</h1>
+        <form id="addProductForm">
+            <label for="productName">Nome do Produto:</label>
+            <input type="text" id="productName" required>
+            
+            <label for="productPrice">Preço do Produto:</label>
+            <input type="number" id="productPrice" step="0.01" required>
+            
+            <label for="productImage">Imagem do Produto:</label>
+            <input type="file" id="productImage" accept="image/*">
+            
+            <img id="imagePreview" src="#" alt="Preview da imagem">
+            
+            <button type="submit">Adicionar Produto</button>
+        </form>
+        <a href="index.html" class="back-link">Voltar para o Menu</a>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

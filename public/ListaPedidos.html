@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pedidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .pedido {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .pedido h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        .total {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body id="listaPedidos">
+    <div class="container">
+        <h2>Lista de Pedidos</h2>
+        <div id="pedidosLista">
+            <!-- Os pedidos serão inseridos aqui dinamicamente -->
+        </div>
+        <button id="clear-history-btn">Limpar Histórico de Pedidos</button>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('clear-history-btn').addEventListener('click', limparHistoricoPedidos);
+
+        function limparHistoricoPedidos() {
+            if (confirm("Tem certeza que deseja limpar todo o histórico de pedidos? Esta ação não pode ser desfeita.")) {
+                localStorage.clear();
+                fetch('http://localhost:8080/api/pedidos/limpar', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Histórico de pedidos limpo com sucesso!");
+                        // Recarregar a página ou atualizar a lista de pedidos
+                        location.reload();
+                    } else {
+                        throw new Error('Falha ao limpar o histórico de pedidos');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert("Erro ao limpar o histórico de pedidos. Por favor, tente novamente.");
+                });
+            }
+        }
+
+        // Função para carregar e exibir a lista de pedidos
+        function carregarPedidos() {
+            fetch('http://localhost:8080/api/pedidos', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include'
+            })
+            .then(response => response.json())
+            .then(pedidos => {
+                const pedidosLista = document.getElementById('pedidosLista');
+                pedidosLista.innerHTML = '';
+                pedidos.forEach(pedido => {
+                    const pedidoElement = document.createElement('div');
+                    pedidoElement.className = 'pedido';
+                    pedidoElement.innerHTML = `
+                        <h3>Pedido #${pedido.id}</h3>
+                        <p>Cliente: ${pedido.nomeCliente}</p>
+                        <p>Endereço: ${pedido.endereco}</p>
+                        <p>Total: R$${pedido.valorTotal.toFixed(2)}</p>
+                    `;
+                    pedidosLista.appendChild(pedidoElement);
+                });
+            })
+            .catch(error => {
+                console.error('Erro ao carregar pedidos:', error);
+                alert('Erro ao carregar a lista de pedidos. Por favor, tente novamente.');
+            });
+        }
+
+        // Carregar pedidos quando a página for carregada
+        document.addEventListener('DOMContentLoaded', carregarPedidos);
+    </script>
+</body>
+</html>
